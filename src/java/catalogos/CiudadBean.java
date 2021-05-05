@@ -28,9 +28,6 @@ public class CiudadBean {
 
     private ArrayList<Ciudad> listaCiudad;
     private Ciudad ciudad;
-    
-//    private String filtroDescripcion;
-//    private int filtroLada;
 
 
     public CiudadBean() {
@@ -56,6 +53,7 @@ public class CiudadBean {
             Logger.getLogger(CiudadBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 
     // Insertar datos en el catalogo C_CIUDAD
     public void insertarDatosCiudad() {
@@ -72,6 +70,7 @@ public class CiudadBean {
             Logger.getLogger(CiudadBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 
     // Editar una fila en el catalogo C_CIUDAD
     public void editarDatosCiudad(Ciudad ciudad) {
@@ -90,6 +89,7 @@ public class CiudadBean {
         }
 
     }
+    
 
     // Elimina una fila en el catalogo C_CIUDAD
     public void eliminarDatosCiudad(Ciudad ciudad) {

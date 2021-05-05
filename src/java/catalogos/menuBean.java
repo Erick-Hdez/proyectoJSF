@@ -13,7 +13,6 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
 
 /**
  *
@@ -26,6 +25,10 @@ public class menuBean {
 
     private String pagina;
 
+    /*
+    *MÉTODO PARA SELECCIÓN DINÁMICA DEL MENÚ
+    */
+    
     public void redirecionar(int id) {
         
         ExternalContext ctx
@@ -35,16 +38,13 @@ public class menuBean {
         try {
             switch (id) {
             case 1:
-                ctx.redirect("/faces/catalogos/catalogoCiudad.xhtml");
-//                setPagina("/catalogos/catalogoCiudad.xhtml");
+                ctx.redirect("catalogos/catalogoCiudad.xhtml");
                 break;
             case 2:
-                ctx.redirect("/faces/catalogos/CatalogoTipoTelefono");
-//                setPagina("/catalogos/catalogoTipoTelefono.xhtml");
+                ctx.redirect("catalogos/CatalogoTipoTelefono");
                 break;
             default:
-                ctx.redirect("/faces/index.xhtml");
-////                setPagina("/index.xhtml");
+                ctx.redirect("index.xhtml");
                 break;
         }
         }catch (IOException ex) {
@@ -53,18 +53,22 @@ public class menuBean {
 
     }
 
+    
+
+//<editor-fold defaultstate="collapsed" desc="GetsySets">
     /**
      * @return the pagina
      */
     public String getPagina() {
         return pagina;
     }
-
+    
     /**
      * @param pagina the pagina to set
      */
     public void setPagina(String pagina) {
         this.pagina = pagina;
     }
+//</editor-fold>
 
 }
