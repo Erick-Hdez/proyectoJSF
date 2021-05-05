@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/src/java/catalogos/UsuarioBean.java</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/src/java/modelos/CatalogoModeloTipoTelefono.java</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/src/java/catalogos/TipoTelefonoBean.java</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/web/menu.xhtml</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/web/catalogos/catalogoCiudad.xhtml</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/src/java/modelos/UsuarioModelo.java</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/web/login.xhtml</file>
-            <file>file:/C:/Users/Blueweb/Documents/NetBeansProjects/ErickJsfProject/src/java/catalogos/menuBean.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
