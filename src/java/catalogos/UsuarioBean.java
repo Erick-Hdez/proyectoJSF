@@ -91,7 +91,7 @@ public class UsuarioBean {
                 = ((ServletContext) ctx.getContext()).getContextPath();
         try {
             ((HttpSession) ctx.getSession(false)).invalidate();
-            ctx.redirect(ctxPath + "/faces/login.xhtml");
+            ctx.redirect(ctxPath + "/login.xhtml");
         } catch (IOException ex) {
             Logger.getLogger(UsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
         }
