@@ -11,60 +11,73 @@
         <link href="imagenes/favicon-32x32.png" rel="icon" type="image/x-icon" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </h:head>
+    <style>
+        .padre > div{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            max-width: 50%;
+            text-align: center;
+        }
+
+    </style>
     <h:body>
         <h:form id="loginForm">      
             <p:growl id="msg" showDetail="true" life="3000" />
-            <div class="centerDiv" style="width: 400px">
+            <div class="padre">
+                <div>
 
-                <p:panel header="Login" style="text-align:center; height: auto; width: auto; position: absolute; left: 35%">
-                    <p:panelGrid id="loginGrid" columns="1" style="margin: 5% auto;height: 200px">
+                    <p:panel header="Login">
+                        <p:panelGrid id="loginGrid" columns="1" style="margin: 5% auto;height: 200px">
 
-                        <p:graphicImage id="logo" value="/imagenes/logo/logo_devcode_invert.jpg" />
+                            <p:graphicImage id="logo" value="/imagenes/logo/logo_devcode_invert.jpg" />
 
-                        <h:panelGrid id="loginPanel" columns="2" cellpadding="5">
-                            <h:outputLabel for="username" value="Nombre Usuario: " />
-                            <p:inputText id="username" maxlength="20" value="#{usuarioBean.usuario.usuario}" required="true" 
-                                         label="username"
-                                         validatorMessage="Nombre de usuario requerido: Letras y números. Tamaño máximo: 20" >
-                                <f:validateRegex pattern="[A-Za-z0-9]+"/>
-                            </p:inputText>
-                            <p:spacer></p:spacer>
-                            <p:message for="username" ></p:message>
-                            <h:outputLabel for="password" value="Password: " />
-                            <p:password id="password" value="#{usuarioBean.usuario.pasword}" maxlength="12"  feedback="false" 
-                                        required="true" label="password"
-                                        validatorMessage="Contraseña requerida: Caracteres alfanuméricos. Tamaño mínimo: 8. Tamaño máximo: 12">
-                                <f:validateRegex pattern="[A-Za-z0-9!?-]+" />
-                            </p:password>
-                            <p:spacer></p:spacer>
-                            <p:message for="password"></p:message>
-                            <p:spacer></p:spacer>
-                            <f:facet name="footer">
-                                <p:commandButton action="#{usuarioBean.autenticar(usuarioBean.usuario)}"
-                                                 value="Login" icon="ui-icon-person" ajax="true" update="msg"/>
-                            </f:facet>
-                        </h:panelGrid>
-                        
-                       <!-- <p:ajaxStatus onstart="PF('status').show()" onsuccess="PF('status').hide()"/>
-                        
-                        <p:dialog widgetVar="status" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
-                            <p:graphicImage value="/imagenes/cargando.jpg" width="60px"/>
-                            <h:outputLabel value="cargando..."/>
-                        </p:dialog>-->
-                    </p:panelGrid>
-                </p:panel>
+                            <h:panelGrid id="loginPanel" columns="2" cellpadding="5">
+                                <h:outputLabel for="username" value="Nombre Usuario: " />
+                                <p:inputText id="username" maxlength="20" value="#{usuarioBean.usuario.usuario}" required="true" 
+                                             label="username"
+                                             validatorMessage="Nombre de usuario requerido: Letras y números. Tamaño máximo: 20" >
+                                    <f:validateRegex pattern="[A-Za-z0-9]+"/>
+                                </p:inputText>
+                                <p:spacer></p:spacer>
+                                <p:message for="username" ></p:message>
+                                <h:outputLabel for="password" value="Password: " />
+                                <p:password id="password" value="#{usuarioBean.usuario.pasword}" maxlength="12"  feedback="false" 
+                                            required="true" label="password"
+                                            validatorMessage="Contraseña requerida: Caracteres alfanuméricos. Tamaño mínimo: 8. Tamaño máximo: 12">
+                                    <f:validateRegex pattern="[A-Za-z0-9!?-]+" />
+                                </p:password>
+                                <p:spacer></p:spacer>
+                                <p:message for="password"></p:message>
+                                <p:spacer></p:spacer>
+                                <f:facet name="footer">
+                                    <p:commandButton action="#{usuarioBean.autenticar(usuarioBean.usuario)}"
+                                                     value="Login" icon="ui-icon-person" ajax="true" update="msg"/>
+                                </f:facet>
+                            </h:panelGrid>
+
+                            <!-- <p:ajaxStatus onstart="PF('status').show()" onsuccess="PF('status').hide()"/>
+                             
+                             <p:dialog widgetVar="status" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                                 <p:graphicImage value="/imagenes/cargando.jpg" width="60px"/>
+                                 <h:outputLabel value="cargando..."/>
+                             </p:dialog>-->
+                        </p:panelGrid>
+                    </p:panel>
+                </div>
             </div>
 
-           <!--idleMonitor timeout="40000">
-                <p:ajax event="active" onstart="PF('dlg').show()"/>
-            </p:idleMonitor>
-
-            <p:dialog widgetVar="dlg" draggable="false" closable="false" modal="true" resizable="false" header="Tu sesión a terminado">
-                <p:panel>
-                    <p:outputLabel value="Tiempo de espera alcanzado"/>
-                    <p:commandButton  value="Ok"  oncomplete="PF('dlg').hide()"/>
-                </p:panel>
-            </p:dialog>-->
+            <!--idleMonitor timeout="40000">
+                 <p:ajax event="active" onstart="PF('dlg').show()"/>
+             </p:idleMonitor>
+ 
+             <p:dialog widgetVar="dlg" draggable="false" closable="false" modal="true" resizable="false" header="Tu sesión a terminado">
+                 <p:panel>
+                     <p:outputLabel value="Tiempo de espera alcanzado"/>
+                     <p:commandButton  value="Ok"  oncomplete="PF('dlg').hide()"/>
+                 </p:panel>
+             </p:dialog>-->
         </h:form>
 
     </h:body>
