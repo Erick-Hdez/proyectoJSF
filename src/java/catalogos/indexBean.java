@@ -23,7 +23,7 @@ public class indexBean {
     public indexBean() {
          nombreUsuario = TraeDatoSesion.traerNombreUsuario();
          user = TraeDatoSesion.traerUsuario();
-//         idUsuario = TraeDatoSesion.traerIdUsuario();
+
     }
     
 

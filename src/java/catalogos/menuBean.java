@@ -27,28 +27,23 @@ public class menuBean {
     private String pagina;
 
     public void redirecionar(int id) {
-        
-        ExternalContext ctx
-                = FacesContext.getCurrentInstance().getExternalContext();
 
-        
-        try {
-            switch (id) {
+        switch (id) {
             case 1:
-                ctx.redirect("/faces/catalogos/catalogoCiudad.xhtml");
-//                setPagina("/catalogos/catalogoCiudad.xhtml");
+                setPagina("/catalogos/catalogoCiudad.xhtml");
                 break;
             case 2:
-                ctx.redirect("/faces/catalogos/CatalogoTipoTelefono");
-//                setPagina("/catalogos/catalogoTipoTelefono.xhtml");
+                setPagina("/catalogos/catalogoTipoTelefono.xhtml");
+                break;
+            case 3:
+                setPagina("/catalogos/catalogoAccesos.xhtml");
+                break;
+            case 4:
+                setPagina("/catalogos/catalogoPerfiles.xhtml");
                 break;
             default:
-                ctx.redirect("/faces/index.xhtml");
-////                setPagina("/index.xhtml");
+                setPagina("/index.xhtml");
                 break;
-        }
-        }catch (IOException ex) {
-            Logger.getLogger(UsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

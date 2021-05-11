@@ -46,7 +46,7 @@ public class UsuarioBean {
 
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenid@ " , respuesta.getLogin().getNombreUsuario());
                 context.addMessage(null, msg);
-                return "template.xhtml";
+                return "faces/template.xhtml";
 
             } else {
 
@@ -80,15 +80,7 @@ public class UsuarioBean {
         String ctxPath
                 = ((ServletContext) ctx.getContext()).getContextPath();
         try {
-            // Usar el contexto de JSF para invalidar la sesión,
-            // NO EL DE SERVLETS (nada de HttpServletRequest)
             ((HttpSession) ctx.getSession(false)).invalidate();
-
-            // Redirección de nuevo con el contexto de JSF,
-            // si se usa una HttpServletResponse fallará.
-            // Sin embargo, como ya está fuera del ciclo de vida 
-            // de JSF se debe usar la ruta completa -_-U
-            
             ctx.redirect(ctxPath + "/faces/login.xhtml");
         } catch (IOException ex) {
             Logger.getLogger(UsuarioBean.class.getName()).log(Level.SEVERE, null, ex);

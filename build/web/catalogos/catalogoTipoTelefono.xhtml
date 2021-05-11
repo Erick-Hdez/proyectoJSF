@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
         <style>
             .ui-icon-home,
@@ -109,16 +109,16 @@
                     <p:column headerText="Editar" style="width: 6rem">
                         <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
 
-                        <p:commandButton onclick="PF('eliminar').show()" icon="ui-icon-trash"/>
+                        <p:commandButton onclick="PF('eliminar').show()" type="reset" icon="ui-icon-trash"/>
                         <p:dialog header="Eliminiar registro" widgetVar="eliminar" minHeight="40"
-                                  width="350" showEffect="fade" modal="true">
+                                  width="350" showEffect="fade">
                             <h5>Está seguro que desea eliminar este registro?</h5>
                             <f:facet name="footer">
-                                <p:commandButton ajax="false" value="No" icon="ui-icon-cancel"
+                                <p:commandButton ajax="false" immediate="true" value="Cancelar" icon="ui-icon-cancel"
                                                  onclick="PF('eliminar').hide()" styleClass="ui-button-flat p-mr-2" />
-                                <p:commandButton  ajax="true" value="Yes" icon="ui-icon-check"
+                                <p:commandButton  ajax="true" immediate="true" value="Aceptar" icon="ui-icon-check"
                                                   onclick="PF('eliminar').close()"
-                                                  action="#{tipoTelefonoBean.editarDatosTipoTelefono(telefono)}"  />
+                                                  action="#{tipoTelefonoBean.eliminarDatosTipoTelefono(telefono)}"  />
                             </f:facet>
                         </p:dialog>
                     </p:column>
@@ -145,7 +145,7 @@
                         <p:outputLabel value="Activo" />
                         <p:selectBooleanCheckbox value="#{tipoTelefonoBean.tipoTelefono.activo}" />                   
 
-                        <p:commandButton update=":form1:msg" value="Guardar"  icon="ui-icon-disk" onclick="PF('dlg1').close()" 
+                        <p:commandButton update=":form1:msgs" value="Guardar"  icon="ui-icon-disk" onclick="PF('dlg1').close()" 
                                          actionListener="#{tipoTelefonoBean.insertarDatosTipoTelefono}" 
                                          style="width:7rem;display:inline-block;float:right"  />
 

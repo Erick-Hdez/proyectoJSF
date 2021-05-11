@@ -43,7 +43,7 @@ public class TipoTelefonoBean {
         RespuestaTipoTelefono respuesta = CatalogoModeloTipoTelefono.getListaTipoTelefono();
         try {
             if (respuesta.getRespuesta().getId() == 0) {
-                mostrarCatalogoTipoTelefono();
+               
                 listaTipoTelefono = (ArrayList<TipoTelefono>) respuesta.getListaTipoTelefono();
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cargando datos ", respuesta.getRespuesta().getMensaje());
                 FacesContext.getCurrentInstance().addMessage(null, msg);
