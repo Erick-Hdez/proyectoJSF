@@ -30,6 +30,11 @@ import respuestas.RespuestaTipoTelefono;
 @ViewScoped
 public class CatalogoModeloTipoTelefono {
     
+    
+    /*
+    *MÉTODO PARA TRAER LISTA DE TIPO TELEFONÍA
+    */
+    
     public static RespuestaTipoTelefono getListaTipoTelefono() {
         RespuestaTipoTelefono respFinal = new RespuestaTipoTelefono();
         Respuesta respuesta = new Respuesta();
@@ -100,7 +105,12 @@ public class CatalogoModeloTipoTelefono {
         return respFinal;
     }
     
-     public static Respuesta insertarRegistroTipoTelefono(TipoTelefono tipoTelefono) {
+    
+    /*
+    *MÉTODO PARA INSERTAR REGISTROS EN TIPO TELEFONÍA
+    */
+    
+    public static Respuesta insertarRegistroTipoTelefono(TipoTelefono tipoTelefono) {
 
         Respuesta respuesta = new Respuesta();
         Connection con = null;
@@ -159,6 +169,11 @@ public class CatalogoModeloTipoTelefono {
         return respuesta;
     }
 
+    
+    /*
+    *MÉTODO PARA MODIFICAR REGISTROS EN TIPO TELEFONÍA
+    */
+    
     public static Respuesta editarRegistroTipoTelefono(TipoTelefono tipoTelefono) {
         Respuesta respuesta = new Respuesta();
         Connection con = null;
@@ -219,6 +234,11 @@ public class CatalogoModeloTipoTelefono {
         return respuesta;
     }
 
+    
+    /*
+    *MÉTODO PARA ELIMINAR REGISTROS EN TIPO TELEFONÍA
+    */
+    
     public static Respuesta eliminarRegistroTipoTelefono(TipoTelefono tipoTelefono) {
 
         Respuesta respuesta = new Respuesta();

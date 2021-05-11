@@ -7,6 +7,7 @@
     </h:head>
     <h:body>
         <h:form>
+<<<<<<< HEAD
             <p:panelGrid columns="3">
                 <p:graphicImage id="logo" value="/imagenes/logo/logo_large_invert.jpg" />
 
@@ -15,6 +16,13 @@
                                  action="#{usuarioBean.logout()}" styleClass="ui-button-info" 
                                  style="display: inline-block; float: right; "/>             
             </p:panelGrid>
+=======
+                <p:graphicImage id="logo" value="/imagenes/logo/logo_large_invert.jpg"/>
+                <h:outputText value="Usuario: #{indexBean.nombreUsuario}" style="display: inline-block; float: right" /><br/>
+                <p:commandButton value="Logout" icon="ui-icon-power" 
+                                 action="#{usuarioBean.logout()}" styleClass="ui-button-info" 
+                                 style="display: inline-block; float: right; margin-top: -35px"/>
+>>>>>>> bbb5a6c052ef55c5e80542cd3c3f469fe3373edb
         </h:form>
     </h:body>
 </html>

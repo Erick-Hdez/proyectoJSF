@@ -7,7 +7,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
@@ -24,7 +23,6 @@ import respuestas.RespuestaUsuario;
 @ManagedBean
 @SessionScoped
 @RequestScoped
-//@ViewScoped
 public class UsuarioBean {
 
     private Usuario usuario;
@@ -33,6 +31,9 @@ public class UsuarioBean {
         usuario = new Usuario();  
     }
 
+    /*
+    *MÉTODO PARA AUTENTICAR EL USUARIO EN EL LOGIN
+    */
     public String autenticar(Usuario usuario) {
         RespuestaUsuario respuesta = UsuarioModelo.getUsuario(usuario);
 
@@ -50,7 +51,8 @@ public class UsuarioBean {
 
             } else {
 
-                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error de autenticación", "Contraseña invalida");
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+                        "Error de autenticación", "Contraseña invalida");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
                 return "";
 
@@ -61,6 +63,10 @@ public class UsuarioBean {
         }
     }
 
+    
+    /*
+    *MÉTODO PARA VERIFICAR LA SESIÓN DEL USUARIO
+    */
     public void verificarSesion() {
         try {
             FacesContext context = FacesContext.getCurrentInstance();
@@ -74,6 +80,10 @@ public class UsuarioBean {
         }
     }
 
+    
+    /*
+    *MÉTODO PARA CERRAR SESIÓN DEL USUARIO
+    */
     public void logout() {
         ExternalContext ctx
                 = FacesContext.getCurrentInstance().getExternalContext();
@@ -81,7 +91,11 @@ public class UsuarioBean {
                 = ((ServletContext) ctx.getContext()).getContextPath();
         try {
             ((HttpSession) ctx.getSession(false)).invalidate();
+<<<<<<< HEAD
             ctx.redirect(ctxPath + "/faces/login.xhtml");
+=======
+            ctx.redirect(ctxPath + "/login.xhtml");
+>>>>>>> bbb5a6c052ef55c5e80542cd3c3f469fe3373edb
         } catch (IOException ex) {
             Logger.getLogger(UsuarioBean.class.getName()).log(Level.SEVERE, null, ex);
         }

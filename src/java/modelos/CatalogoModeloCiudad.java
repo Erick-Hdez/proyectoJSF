@@ -25,14 +25,15 @@ import respuestas.RespuestaCiudad;
  */
 public class CatalogoModeloCiudad {
     
+    /*
+    *MÉTODO PARA TRAER LA LISTA DE CIUDAD
+    */
     public static RespuestaCiudad getListaCiudades() {
         RespuestaCiudad respFinal = new RespuestaCiudad();
         Respuesta respuesta = new Respuesta();
         ArrayList<Ciudad> lista = null;
         Connection con = null;
         
-//        System.out.println(filtroDescripcion);
-//        System.out.println(filtroLada);
         try {
             con = PoolDB.getConnection("conexion");
            
@@ -45,15 +46,7 @@ public class CatalogoModeloCiudad {
                     + "FECHA_BAJA, "
                     + "FECHA_SERVIDOR "
                     + "from C_CIUDAD ");
-//            
-//            if (!filtroDescripcion.trim().equals("") && filtroLada > 0) {
-//                query += " WHERE DESCRIPCION LIKE '%" + filtroDescripcion + "%' " + " AND LADA LIKE '%" + filtroLada + "%'";
-//            } else if (filtroLada > 0) {
-//                query += " WHERE LADA LIKE '%" + filtroLada + "%'";
-//            } else if (!filtroDescripcion.trim().equals("")) {
-//                 query += " WHERE DESCRIPCION LIKE '%" + filtroDescripcion + "%' ";
-//            }          
-//            
+          
             PreparedStatement ps = con.prepareStatement(query);                   
 
             ResultSet result = ps.executeQuery();
@@ -115,6 +108,10 @@ public class CatalogoModeloCiudad {
         return respFinal;
     }
 
+    
+    /*
+    *MÉTODO PARA INSERTAR REGISTROS DE CIUDAD
+    */
     public static Respuesta insertarRegistroCiudad(Ciudad ciudad) {
 
         Respuesta respuesta = new Respuesta();
@@ -175,6 +172,10 @@ public class CatalogoModeloCiudad {
         return respuesta;
     }
 
+    
+    /*
+    *MÉTODO PARA EDITAR REGISTROS DE CIUDAD
+    */
     public static Respuesta editarRegistroCiudad(Ciudad ciudad) {
         Respuesta respuesta = new Respuesta();
         Connection con = null;
@@ -231,6 +232,10 @@ public class CatalogoModeloCiudad {
         return respuesta;
     }
 
+    
+    /*
+    *MÉTODO PARA ELIMINAR REGISTROS DE CIUDAD
+    */
     public static Respuesta eliminarRegistroCiudad(Ciudad ciudad) {
 
         Respuesta respuesta = new Respuesta();

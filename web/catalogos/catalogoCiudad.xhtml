@@ -27,7 +27,9 @@
     </h:head>
     <h:body>
         <h:form id="form">
-            <h1>Ciudad</h1>
+            <p:panel>
+                <h2>Ciudad</h2>
+            </p:panel>
             <p:growl id="msgs" showDetail="true"/>
 
             <div class="card">
@@ -36,7 +38,12 @@
                              style="margin-bottom:20px">
 
                     <p:ajax event="rowEdit" listener="#{ciudadBean.editarDatosCiudad(ciudad)}" update=":form:msgs"/>
+<<<<<<< HEAD
                   
+=======
+
+
+>>>>>>> bbb5a6c052ef55c5e80542cd3c3f469fe3373edb
                     <p:column headerText="Descripción" filterBy="#{ciudad.descripcion}" filterStyle="width:100px;" filterMatchMode="contains">
                         <p:cellEditor>
                             <f:facet name="output">
@@ -134,10 +141,16 @@
                             </f:facet>
                         </p:dialog>
                     </p:column>
+                    
+                    <f:facet name="footer">
+                        <div align="left">
+                        <p:commandButton value="Nuevo" type="button" onclick="PF('dlg').show()" icon="ui-icon-plus"
+                                 style="margin-right:20px;border-radius:5px; margin-left: 20px"/>
+                        </div>
+                    </f:facet>
                 </p:dataTable>
 
-                <p:commandButton value="Nuevo" type="button" onclick="PF('dlg').show()" icon="ui-icon-plus"
-                                 style="margin-right:20px;border-radius:5px; margin-top:1rem; margin-left: 20px"/>
+                
                 <p:dialog id="altas" header="Altas" widgetVar="dlg" minHeight="40" width="420" showEffect="fade" >
                     <p:growl id="msg" showDetail="true"/>
                     <p:panelGrid columns="2">

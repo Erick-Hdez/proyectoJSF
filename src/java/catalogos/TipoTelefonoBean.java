@@ -58,6 +58,7 @@ public class TipoTelefonoBean {
         }
 
     }
+    
 
     // insertar datos en el catálogo C_TIPO_TELEFONO
     public void insertarDatosTipoTelefono() {
@@ -79,6 +80,7 @@ public class TipoTelefonoBean {
         }
 
     }
+    
 
     // editar fila en catálogo C_TIPO_TELEFONO
     public void editarDatosTipoTelefono(TipoTelefono tipoTelefono) {
@@ -101,6 +103,7 @@ public class TipoTelefonoBean {
         }
 
     }
+    
 
     // eliminar fila de catálogo C_TIPO_TELEFONO
     public void eliminarDatosTipoTelefono(TipoTelefono tipoTelefono) {
